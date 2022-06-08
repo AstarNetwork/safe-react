@@ -88,8 +88,8 @@ function NameNewSafeStep(): ReactElement {
     <BlockWithPadding data-testid={'create-safe-name-step'}>
       <Block margin="md">
         <Paragraph color="primary" noMargin size="lg">
-          You are about to create a new Gnosis Safe wallet with one or more owners. First, let&apos;s give your new
-          wallet a name. This name is only stored locally and will never be shared with Gnosis or any third parties. The
+          You are about to create a new Astar Safe wallet with one or more owners. First, let&apos;s give your new
+          wallet a name. This name is only stored locally and will never be shared with Astar or any third parties. The
           new Safe will ONLY be available on <NetworkLabel />
         </Paragraph>
       </Block>
@@ -109,14 +109,23 @@ function NameNewSafeStep(): ReactElement {
       <Block margin="lg">
         <Paragraph color="primary" noMargin size="lg">
           By continuing you consent to the{' '}
-          <Link href="https://gnosis-safe.io/terms" rel="noopener noreferrer" target="_blank">
+          <Link
+            href="https://docs.google.com/document/d/1gxM0PEzFq7nW5VB11pMcDUaaKxfMz3BjTDtmEem_oo4"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             terms of use
           </Link>
           {' and '}
-          <Link href="https://gnosis-safe.io/privacy" rel="noopener noreferrer" target="_blank">
+          <Link
+            href="https://docs.google.com/document/d/1jEbhRfh292TahRMRdeN4z-8MYNU27dCS_vVopV6xQgk"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             privacy policy
           </Link>
-          .
+          . Most importantly, you confirm that your funds are held securely in the Astar Safe, a smart contract on the
+          Astar blockchain. These funds cannot be accessed by Astar at any point.
         </Paragraph>
       </Block>
     </BlockWithPadding>
