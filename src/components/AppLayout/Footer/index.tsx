@@ -58,6 +58,14 @@ const Footer = (): React.ReactElement => {
     <footer className={classes.footer}>
       <span className={classes.item}>©{date.getFullYear()} Astar</span>
       <span className={classes.sep}>|</span>
+      <Link className={cn(classes.item, classes.link)} target="_blank" to="https://astar.network">
+        Website
+      </Link>
+      <span className={classes.sep}>|</span>
+      <Link className={cn(classes.item, classes.link)} target="_blank" to="https://portal.astar.network">
+        Astar Portal
+      </Link>
+      <span className={classes.sep}>|</span>
       <Link
         className={cn(classes.item, classes.link)}
         target="_blank"
