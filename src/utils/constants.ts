@@ -47,5 +47,5 @@ const isProdGateway = () => {
 export const GATEWAY_URL =
   process.env.REACT_APP_GATEWAY_URL ||
   (IS_PRODUCTION || isProdGateway()
-    ? 'https://gateway.staging.safe.astar.network'
-    : 'https://gateway.staging.safe.astar.network')
+    ? 'https://gateway.staging-safe.astar.network'
+    : 'https://gateway.staging-safe.astar.network')
