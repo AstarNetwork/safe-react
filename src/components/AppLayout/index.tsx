@@ -8,7 +8,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
 import { MobileNotSupported } from './MobileNotSupported'
-import { SAFE_ROUTES, WELCOME_ROUTE } from 'src/routes/routes'
+import { SAFE_ROUTES, WELCOME_ROUTE, TERMS_ROUTE, PRIVACY_POLICY_ROUTE, COOKIE_POLICY_ROUTE } from 'src/routes/routes'
 import useDarkMode from 'src/logic/hooks/useDarkMode'
 import { screenSm } from 'src/theme/variables'
 
@@ -140,7 +140,7 @@ const Layout: React.FC<Props> = ({
   const closeMobileNotSupported = () => setMobileNotSupportedClosed(true)
 
   const hasFooter = !!matchPath(pathname, {
-    path: [SAFE_ROUTES.SETTINGS, WELCOME_ROUTE],
+    path: [SAFE_ROUTES.SETTINGS, WELCOME_ROUTE, TERMS_ROUTE, PRIVACY_POLICY_ROUTE, COOKIE_POLICY_ROUTE],
   })
 
   const onSidebarClick = useCallback(

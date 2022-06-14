@@ -8,6 +8,7 @@ import GnoButtonLink from 'src/components/layout/ButtonLink'
 import Link from 'src/components/layout/Link'
 import { openCookieBanner } from 'src/logic/cookies/store/actions/openCookieBanner'
 import { screenSm, secondary, sm } from 'src/theme/variables'
+import { TERMS_ROUTE, PRIVACY_POLICY_ROUTE, COOKIE_POLICY_ROUTE } from 'src/routes/routes'
 
 const useStyles = makeStyles({
   footer: {
@@ -66,19 +67,11 @@ const Footer = (): React.ReactElement => {
         Astar Portal
       </Link>
       <span className={classes.sep}>|</span>
-      <Link
-        className={cn(classes.item, classes.link)}
-        target="_blank"
-        to="https://docs.google.com/document/d/1gxM0PEzFq7nW5VB11pMcDUaaKxfMz3BjTDtmEem_oo4"
-      >
+      <Link className={cn(classes.item, classes.link)} component={Link} to={TERMS_ROUTE}>
         Terms
       </Link>
       <span className={classes.sep}>|</span>
-      <Link
-        className={cn(classes.item, classes.link)}
-        target="_blank"
-        to="https://docs.google.com/document/d/1jEbhRfh292TahRMRdeN4z-8MYNU27dCS_vVopV6xQgk"
-      >
+      <Link className={cn(classes.item, classes.link)} component={Link} to={PRIVACY_POLICY_ROUTE}>
         Privacy
       </Link>
       {/*<span className={classes.sep}>|</span>
@@ -90,11 +83,7 @@ const Footer = (): React.ReactElement => {
         Imprint
   </Link>*/}
       <span className={classes.sep}>|</span>
-      <Link
-        className={cn(classes.item, classes.link)}
-        target="_blank"
-        to="https://docs.google.com/document/d/152Z3d9a3aIU4jJdEltdkmRBx99_t85ytdfsfFwRcGMo"
-      >
+      <Link className={cn(classes.item, classes.link)} component={Link} to={COOKIE_POLICY_ROUTE}>
         Cookie Policy
       </Link>
       <span className={classes.sep}>-</span>
