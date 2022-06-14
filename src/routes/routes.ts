@@ -44,6 +44,9 @@ export const ROOT_ROUTE = '/'
 export const WELCOME_ROUTE = '/welcome'
 export const OPEN_SAFE_ROUTE = '/open'
 export const GENERIC_APPS_ROUTE = '/apps'
+export const TERMS_ROUTE = '/terms'
+export const PRIVACY_POLICY_ROUTE = '/privacy-policy'
+export const COOKIE_POLICY_ROUTE = '/cookie-policy'
 export const LOAD_SAFE_ROUTE = generatePath(LOAD_SPECIFIC_SAFE_ROUTE) // By providing no slug, we get '/load'
 
 // [SAFE_SECTION_SLUG], [SAFE_SUBSECTION_SLUG] populated safe routes
@@ -65,6 +68,9 @@ export const SAFE_ROUTES = {
   SETTINGS_POLICIES: `${ADDRESSED_ROUTE}/settings/policies`,
   SETTINGS_SPENDING_LIMIT: `${ADDRESSED_ROUTE}/settings/spending-limit`,
   SETTINGS_ADVANCED: `${ADDRESSED_ROUTE}/settings/advanced`,
+  TERMS: `${ADDRESSED_ROUTE}/terms`,
+  PRIVACY_POLICY: `${ADDRESSED_ROUTE}/privacy-policy`,
+  COOKIE_POLICY: `${ADDRESSED_ROUTE}/cookie`,
 }
 
 export const getNetworkRootRoutes = (): Array<{ chainId: ChainId; route: string; shortName: string }> =>

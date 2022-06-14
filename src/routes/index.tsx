@@ -16,6 +16,9 @@ import {
   getNetworkRootRoutes,
   SAFE_ROUTES,
   GENERIC_APPS_ROUTE,
+  TERMS_ROUTE,
+  PRIVACY_POLICY_ROUTE,
+  COOKIE_POLICY_ROUTE,
 } from './routes'
 import { setChainId } from 'src/logic/config/utils'
 import { setChainIdFromUrl } from 'src/utils/history'
@@ -23,6 +26,9 @@ import { usePageTracking } from 'src/utils/googleTagManager'
 import useSafeAddress from 'src/logic/currentSession/hooks/useSafeAddress'
 
 const Welcome = React.lazy(() => import('./welcome/Welcome'))
+const Terms = React.lazy(() => import('./legal/Terms'))
+const PrivacyPolicy = React.lazy(() => import('./legal/PrivacyPolicy'))
+const CookiePolicy = React.lazy(() => import('./legal/CookiePolicy'))
 const CreateSafePage = React.lazy(() => import('./CreateSafePage/CreateSafePage'))
 const LoadSafePage = React.lazy(() => import('./LoadSafePage/LoadSafePage'))
 const SafeContainer = React.lazy(() => import('./safe/container'))
@@ -114,6 +120,9 @@ const Routes = (): React.ReactElement => {
       />
 
       <Route component={Welcome} exact path={WELCOME_ROUTE} />
+      <Route component={Terms} exact path={TERMS_ROUTE} />
+      <Route component={PrivacyPolicy} exact path={PRIVACY_POLICY_ROUTE} />
+      <Route component={CookiePolicy} exact path={COOKIE_POLICY_ROUTE} />
 
       <Route component={CreateSafePage} exact path={OPEN_SAFE_ROUTE} />
 
