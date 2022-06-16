@@ -4,7 +4,7 @@ import { generatePath, matchPath } from 'react-router-dom'
 import { getChains } from 'src/config/cache/chains'
 import { ChainId, ShortName } from 'src/config/chain.d'
 import { checksumAddress } from 'src/utils/checksumAddress'
-import { PUBLIC_URL } from 'src/utils/constants'
+import { DEMO_SAFE_MAINNET, PUBLIC_URL } from 'src/utils/constants'
 import { parsePrefixedAddress } from 'src/utils/prefixedAddress'
 
 export const history = createBrowserHistory({
@@ -39,7 +39,7 @@ export type SafeRouteSlugs = {
 
 export const LOAD_SPECIFIC_SAFE_ROUTE = `/load/:${SAFE_ADDRESS_SLUG}?` // ? = optional slug
 
-// Routes independant of safe/network
+// Routes independent of safe/network
 export const ROOT_ROUTE = '/'
 export const WELCOME_ROUTE = '/welcome'
 export const OPEN_SAFE_ROUTE = '/open'
@@ -48,6 +48,7 @@ export const TERMS_ROUTE = '/terms'
 export const PRIVACY_POLICY_ROUTE = '/privacy-policy'
 export const COOKIE_POLICY_ROUTE = '/cookie-policy'
 export const LOAD_SAFE_ROUTE = generatePath(LOAD_SPECIFIC_SAFE_ROUTE) // By providing no slug, we get '/load'
+export const SAFE_APP_LANDING_PAGE_ROUTE = '/share/safe-app'
 
 // [SAFE_SECTION_SLUG], [SAFE_SUBSECTION_SLUG] populated safe routes
 export const SAFE_ROUTES = {
@@ -133,4 +134,15 @@ export const generatePrefixedAddressRoutes = (params: SafeRouteParams): typeof S
 
 export const getSafeAppUrl = (appUrl: string, routesSlug: SafeRouteParams): string => {
   return generateSafeRoute(SAFE_ROUTES.APPS, routesSlug) + `?appUrl=${appUrl}`
+}
+
+export const demoSafeRoute = generateSafeRoute(SAFE_ROUTES.APPS, {
+  shortName: 'eth',
+  safeAddress: DEMO_SAFE_MAINNET,
+})
+
+export const getShareSafeAppUrl = (appUrl: string, chainId: string): string => {
+  const baseUrl = `${window.location.origin}${PUBLIC_URL}`
+
+  return `${baseUrl}${SAFE_APP_LANDING_PAGE_ROUTE}?appUrl=${encodeURI(appUrl)}&chainId=${chainId}`
 }
