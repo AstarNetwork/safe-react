@@ -18,6 +18,8 @@ import {
 } from 'src/routes/routes'
 import useDarkMode from 'src/logic/hooks/useDarkMode'
 import { screenSm } from 'src/theme/variables'
+import TransactionQueueBar from '../TransactionQueueBar/TransactionQueueBar'
+import { InvalidMasterCopyError } from 'src/components/AppLayout/InvalidMasterCopyError'
 
 const Container = styled.div`
   height: 100vh;
@@ -30,6 +32,7 @@ const Container = styled.div`
 
 const HeaderWrapper = styled.nav`
   height: 52px;
+  min-height: 52px;
   width: 100%;
   z-index: 1299;
 
@@ -100,21 +103,14 @@ const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
+`
 
+const MainContentWrapper = styled.div`
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
   padding: 8px 24px;
-
-  > :nth-child(1) {
-    flex-grow: 1;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  > :nth-child(2) {
-    width: 100%;
-    height: 59px;
-  }
+  overflow-x: auto;
 `
 
 type Props = {
@@ -164,6 +160,8 @@ const Layout: React.FC<Props> = ({
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>
+      <InvalidMasterCopyError />
+
       <BodyWrapper>
         {showSideBar && (
           <SidebarWrapper data-testid="sidebar" $expanded={expanded} onClick={onSidebarClick}>
@@ -180,7 +178,8 @@ const Layout: React.FC<Props> = ({
           </SidebarWrapper>
         )}
         <ContentWrapper>
-          <div>{children}</div>
+          <MainContentWrapper>{children}</MainContentWrapper>
+          <TransactionQueueBar />
           {hasFooter && <Footer />}
         </ContentWrapper>
       </BodyWrapper>
