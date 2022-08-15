@@ -1,12 +1,12 @@
-import { lazy, useMemo } from 'react'
+//import { lazy, useMemo } from 'react'
 import styled from 'styled-components'
 import { Divider } from '@gnosis.pm/safe-react-components'
 //import { useDispatch } from 'react-redux'
 
 import List, { ListItemType, StyledListItemText } from 'src/components/List'
 import SafeHeader from './SafeHeader'
-import { IS_PRODUCTION } from 'src/utils/constants'
-import { wrapInSuspense } from 'src/utils/wrapInSuspense'
+//import { IS_PRODUCTION } from 'src/utils/constants'
+//import { wrapInSuspense } from 'src/utils/wrapInSuspense'
 import Track from 'src/components/Track'
 import { OVERVIEW_EVENTS } from 'src/utils/events/overview'
 import ListIcon from 'src/components/List/ListIcon'
@@ -66,12 +66,12 @@ type Props = {
   items: ListItemType[]
 }
 
-// This doesn't play well if exported to its own file
+/* // This doesn't play well if exported to its own file
 const lazyLoad = (path: string): React.ReactElement => {
   // import(path) does not work unless it is a template literal
   const Component = lazy(() => import(`${path}`))
   return wrapInSuspense(<Component />)
-}
+} */
 
 //const isDesktop = process.env.REACT_APP_BUILD_FOR_DESKTOP
 
@@ -85,7 +85,7 @@ const Sidebar = ({
   onReceiveClick,
   onNewTransactionClick,
 }: Props): React.ReactElement => {
-  const debugToggle = useMemo(() => (IS_PRODUCTION ? null : lazyLoad('./DebugToggle')), [])
+  //const debugToggle = useMemo(() => (IS_PRODUCTION ? null : lazyLoad('./DebugToggle')), [])
   //const dispatch = useDispatch()
 
   /*const handleClick = (): void => {
@@ -124,9 +124,9 @@ const Sidebar = ({
       ) : null}
 
       <HelpContainer>
-        {debugToggle}
+        {/* {debugToggle}
 
-        <StyledDivider />
+        <StyledDivider /> */}
 
         <HelpList>
           {/*!isDesktop && BEAMER_ID && (
