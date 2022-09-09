@@ -72,6 +72,7 @@ export const SAFE_ROUTES = {
   TERMS: `${ADDRESSED_ROUTE}/terms`,
   PRIVACY_POLICY: `${ADDRESSED_ROUTE}/privacy-policy`,
   COOKIE_POLICY: `${ADDRESSED_ROUTE}/cookie`,
+  SETTINGS_SAFE_APPS_PERMISSIONS: `${ADDRESSED_ROUTE}/settings/safe-apps-permissions`,
 }
 
 export const getNetworkRootRoutes = (): Array<{ chainId: ChainId; route: string; shortName: string }> =>
