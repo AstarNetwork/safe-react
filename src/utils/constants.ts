@@ -41,7 +41,7 @@ export const TENDERLY_ORG_NAME = process.env.REACT_APP_TENDERLY_ORG_NAME || ''
 export const E2E_MNEMONIC = process.env.REACT_APP_E2E_MNEMONIC || ''
 
 // localStorage-related constants
-export const LS_NAMESPACE = 'SAFE'
+export const LS_NAMESPACE = 'ASTAR_SAFE'
 export const LS_SEPARATOR = '__'
 export const LS_USE_PROD_CGW = 'useProdGateway'
 
@@ -56,4 +56,6 @@ const isProdGateway = () => {
 
 export const GATEWAY_URL =
   process.env.REACT_APP_GATEWAY_URL ||
-  (IS_PRODUCTION || isProdGateway() ? 'https://gateway.safe.astar.network' : 'https://gateway.safe.astar.network')
+  (IS_PRODUCTION || isProdGateway()
+    ? 'https://gateway.safe.astar.network'
+    : 'https://gateway.staging-safe.astar.network')
