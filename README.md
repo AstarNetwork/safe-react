@@ -1,3 +1,4 @@
+# Safe web UI
 # ‼️ This repository is in maintenance mode and will be eventually archived.
 # Please use [safe-global/web-core](https://github.com/safe-global/web-core)
 

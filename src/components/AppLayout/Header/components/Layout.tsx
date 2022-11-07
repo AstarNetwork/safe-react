@@ -11,6 +11,7 @@ import Col from 'src/components/layout/Col'
 import Row from 'src/components/layout/Row'
 import { headerHeight, md, screenSm, sm } from 'src/theme/variables'
 import { useStateHandler } from 'src/logic/hooks/useStateHandler'
+import SafeLogo from '../assets/astar_logo.png'
 import { ROOT_ROUTE } from 'src/routes/routes'
 import WalletSwitch from 'src/components/WalletSwitch'
 import Divider from 'src/components/layout/Divider'
@@ -19,7 +20,7 @@ import { useSelector } from 'react-redux'
 import { OVERVIEW_EVENTS } from 'src/utils/events/overview'
 import Track from 'src/components/Track'
 import Notifications from 'src/components/AppLayout/Header/components/Notifications'
-import AnimatedLogo from 'src/components/AppLayout/Header/components/AnimatedLogo'
+import Img from 'src/components/layout/Img'
 import SafeTokenWidget, { getSafeTokenAddress } from './SafeTokenWidget'
 import { _getChainId } from 'src/config'
 
@@ -111,7 +112,7 @@ const Layout = ({ classes, providerDetails, providerInfo }) => {
       <Col className={classes.logo} middle="xs" start="xs">
         <Track {...OVERVIEW_EVENTS.HOME}>
           <Link to={ROOT_ROUTE}>
-            <AnimatedLogo />
+            <Img alt="Astar Safe" height={36} src={SafeLogo} testId="heading-gnosis-logo" id="safe-logo" />
           </Link>
         </Track>
       </Col>
